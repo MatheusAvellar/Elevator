@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en-us">
+    <title>Elevator</title>
+    <meta name="author" content="Matheus Avellar">
+    <script src="./resources/jquery.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="./resources/favicon.png" type="image/png">
+    <link rel="icon" href="./resources/favicon.png" type="image/png">
+    <style type="text/css">
+        @font-face {
+            font-family: "Meyrin";
+            src: local("Meyrin"), url(./resources/Meyrin.woff) format("woff");
+            src: local("Meyrin"), url(./resources/Meyrin.ttf) format("truetype");
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #33ce75;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-family: "Meyrin", "Press Start 2P", monospace;
+            text-align: center;
+            font-size: 55px;
+        }
+        #c {
+            top: 0;
+            left: 0;
+            /*border: 1px solid #ecf0f1;*/
+            margin-top: 50px;
+            cursor: default;
+        }
+    </style>
+</head>
+<body onload="$gc.init();">
+    <div id="main">
+        <center>
+            <canvas id="c" width="500" height="500"></canvas>
+        </center>
+    </div>
+    <script type="text/javascript">
+        "use strict";
+
+    /*(function() {*/
+
+        const C = document.getElementById("c");
+        const CTX = c.getContext("2d");
+        const h50 = (C.height / 2);
+        const w50 = (C.width / 2);
+
+        let $gc = {};
+
+    /*})();*/
+    </script>
+</body>
+</html>
