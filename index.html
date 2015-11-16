@@ -82,7 +82,17 @@
                 },
                 foo: function() {
                     CTX.clearRect(0, 0, C.width, C.height);
-                    if ($gc.scene == 1) {
+                    if ($gc.scene == 0) {
+                        $gc.draw.rect(51, 76, 20, 20, $gc.c.BLACK);
+                        $gc.draw.rect(50, 75, 20, 20, $gc.c.GREY);
+                        $gc.draw.text(1, 55, 93, "20px 'Meyrin'", $gc.c.RED);
+                        $gc.draw.text("Play", 80, 95, "30px 'Courier New'", $gc.c.BLACK);
+
+                        $gc.draw.rect(51, 101, 20, 20, $gc.c.BLACK);
+                        $gc.draw.rect(50, 100, 20, 20, $gc.c.GREY);
+                        $gc.draw.text(1, 55, 93, "20px 'Meyrin'", $gc.c.RED);
+                        $gc.draw.text("Credits", 80, 125, "30px 'Courier New'", $gc.c.BLACK);
+                    } else if ($gc.scene == 1) {
                         for (let _i = 0, _l = $gc.floor.available.length; _i < _l; _i++) {
                             if (!$gc.floor.available[_i].p) {
                                 $gc.draw.rect(51, _i * 25 + 51, 20, 20, $gc.c.BLACK);
@@ -101,9 +111,6 @@
                 $gc.draw.foo();
 
                 if ($gc.scene == 0) {
-                    $gc.draw.text("1", 80, 80, "50px 'Meyrin'", $gc.c.RED);
-                    $gc.draw.text("Play", 80, 160, "50px 'Meyrin'", $gc.c.RED);
-                    $gc.draw.text("Credits", 80, 210, "50px 'Meyrin'", $gc.c.RED);
                 } else if ($gc.scene == 1) {
                     let _a = $gc.floor.available;
                     if ($gc.floor.destination > _a[_a.length - 1].n
@@ -144,19 +151,20 @@
 
                 let _t = setTimeout($gc.update, 30);
             },
-            scene: 1, // 0: Menu, 1: Game, 2: Credits
+            scene: 0, // 0: Menu, 1: Game, 2: Credits
             floor: {
                 current: 0,
                 available: [
-                    {n: 0, p: !1},
-                    {n: 1, p: !1},
-                    {n: 2, p: !1},
-                    {n: 3, p: !1},
-                    {n: 4, p: !0},
-                    {n: 5, p: !1},
-                    {n: 6, p: !1},
-                    {n: 7, p: !1}
+                    {  n: 0, p: !1  },
+                    {  n: 1, p: !1  },
+                    {  n: 2, p: !0  },
+                    {  n: 3, p: !0  },
+                    {  n: 4, p: !0  },
+                    {  n: 5, p: !1  },
+                    {  n: 6, p: !0  },
+                    {  n: 7, p: !1  }
                 ],
+                queue: [4, 6, 3, 2],
                 destination: 4
             },
             timeElapsed: 0,
